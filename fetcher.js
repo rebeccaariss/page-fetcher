@@ -15,7 +15,7 @@ request(url, function(error, response, body) {
     if (err) {
       console.error(err);
     }
-    // file written successfully
+    console.log(`Downloaded and saved ${response.headers["content-length"]} bytes to ${filepath}`);
   });
 
 });
