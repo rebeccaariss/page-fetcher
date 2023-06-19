@@ -1,7 +1,8 @@
 const request = require('request');
 const fs = require("fs");
 
-const url = 'placeholder'; // access terminal input via process.argv
+const url = process.argv[2];
+const filepath = process.argv[3];
 
 // boilerplate from https://www.npmjs.com/package/request:
 request(url, function(error, response, body) {
@@ -10,7 +11,7 @@ request(url, function(error, response, body) {
   console.log('body:', body); // Print the HTML for the given URL.
 
   // boilerplate from https://nodejs.dev/en/learn/writing-files-with-nodejs/:
-  fs.writeFile('/Users/joe/test.txt', content, err => {
+  fs.writeFile(filepath, body, err => {
     if (err) {
       console.error(err);
     }
